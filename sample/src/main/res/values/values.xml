@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="items_cache_duration_millis">3600000</integer>
+    <integer name="update_mode_time_elapsed">1</integer>
+    <integer name="update_mode_now_playing_changed">2</integer>
+    <integer name="update_mode_card_focused">4</integer>
+    <integer name="update_mode_program_card_focused">8</integer>
+    <integer name="update_mode_launcher_idle_mode_changed">16</integer>
+</resources>

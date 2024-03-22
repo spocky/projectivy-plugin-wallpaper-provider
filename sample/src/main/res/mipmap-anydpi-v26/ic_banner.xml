@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/projectivy_icon_background"/>
+    <foreground>
+        <inset android:drawable="@drawable/ic_banner_drawable" android:inset="18%"/>
+    </foreground>
+</adaptive-icon>

@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="Theme.ProjectivyWallpaperProvider" parent="@style/Theme.Leanback">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorPrimary">@color/app_background</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+</resources>

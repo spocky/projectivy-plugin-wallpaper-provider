@@ -1,0 +1,10 @@
+<resources>
+    <string name="plugin_name">Projectivy Wallpaper Provider Sample</string>
+    <string name="plugin_description">Plugin description</string>
+    <string name="plugin_uuid">CHANGE_ME</string>
+
+    <!-- Setting parameters -->
+    <string name="settings">Settings</string>
+    <string name="setting_image_url_title">Image URL</string>
+
+</resources>

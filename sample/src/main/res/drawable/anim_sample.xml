@@ -1,0 +1,89 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector android:height="100dp" android:viewportHeight="1333.3"
+            android:viewportWidth="1333.3" android:width="100dp">
+            <group
+                android:name="group"
+                android:rotation="0"
+                android:pivotX="666"
+                android:pivotY="666"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                >
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C807.3,378.3 585.1,156 0,-0L95.2,-0C648.3,173.6 838.7,395.8 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c201.3,-249.9 42.6,-472.1 -476.2,-666.7l95.2,-0C767.7,218.7 894.7,440.9 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c251.9,-198.8 156.6,-421 -285.7,-666.7l95.2,-0C875.7,275.1 939.2,497.3 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c289.8,-137.8 258.1,-360 -95.2,-666.7L666.7,-0c303.4,340 303.4,562.2 0,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c313.2,-69.8 344.9,-292.1 95.2,-666.7l95.2,-0C1049.2,410.1 985.7,632.3 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c320.9,1.6 416.1,-220.6 285.7,-666.7l95.2,-0C1112.3,482 985.4,704.2 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c312.5,73 471.2,-149.3 476.2,-666.7l95.2,-0C1159.5,551.9 969,774.2 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="m666.7,666.7c288.4,140.7 510.6,-81.6 666.7,-666.7L1333.3,95.2C1159.7,648.3 937.5,838.7 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C916.5,868 1138.8,709.3 1333.3,190.5L1333.3,285.7C1114.7,767.7 892.4,894.7 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C865.5,918.5 1087.7,823.3 1333.3,381L1333.3,476.2C1058.3,875.7 836,939.2 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C804.5,956.5 1026.7,924.7 1333.3,571.4L1333.3,666.7C993.4,970.1 771.1,970.1 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C736.5,979.9 958.7,1011.6 1333.3,761.9L1333.3,857.1C923.2,1049.2 701,985.7 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C665.1,987.6 887.3,1082.8 1333.3,952.4L1333.3,1047.6C851.4,1112.3 629.1,985.4 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C593.7,979.1 815.9,1137.9 1333.3,1142.9L1333.3,1238.1C781.4,1159.5 559.2,969 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C526,955.1 748.2,1177.3 1333.3,1333.3L1238.1,1333.3C685.1,1159.7 494.6,937.5 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C465.3,916.5 624.1,1138.8 1142.9,1333.3L1047.6,1333.3C565.6,1114.7 438.6,892.4 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C414.8,865.5 510,1087.7 952.4,1333.3L857.1,1333.3C457.6,1058.3 394.1,836 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C376.9,804.5 408.6,1026.7 761.9,1333.3L666.7,1333.3c-303.4,-340 -303.4,-562.2 0,-666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C353.5,736.5 321.7,958.7 571.4,1333.3L476.2,1333.3C284.1,923.2 347.6,701 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C345.8,665.1 250.5,887.3 381,1333.3L285.7,1333.3C221,851.4 348,629.1 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C354.2,593.7 195.5,815.9 190.5,1333.3L95.2,1333.3C173.8,781.4 364.3,559.2 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C378.3,526 156,748.2 0,1333.3L0,1238.1C173.6,685.1 395.8,494.6 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C416.8,465.3 194.6,624.1 0,1142.9l0,-95.2C218.7,565.6 440.9,438.6 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C467.8,414.8 245.6,510 0,952.4l0,-95.2C275.1,457.6 497.3,394.1 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C528.9,376.9 306.7,408.6 0,761.9L0,666.7c340,-303.4 562.2,-303.4 666.7,-0" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C596.8,353.5 374.6,321.7 0,571.4l0,-95.2C410.1,284.1 632.3,347.6 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C668.3,345.8 446,250.5 0,381l0,-95.2C482,221 704.2,348 666.7,666.7" />
+                <path android:fillColor="#ccd35933"
+                    android:pathData="M666.7,666.7C739.6,354.2 517.4,195.5 0,190.5l0,-95.2C551.9,173.8 774.2,364.3 666.7,666.7" />
+
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <set>
+            <objectAnimator
+                android:startOffset="0"
+                android:interpolator="@android:anim/linear_interpolator"
+                android:repeatCount="infinite"
+                android:duration="10000"
+                android:propertyName="rotation"
+                android:valueFrom="0"
+                android:valueTo="360"  />
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>
