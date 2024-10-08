@@ -39,7 +39,6 @@ annotation class WallpaperDisplayMode {
     }
 }
 
-
 @Parcelize
 data class Wallpaper(
     val uri: String,
