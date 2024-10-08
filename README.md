@@ -6,7 +6,7 @@ This is a sample project for developing a wallpaper provider plugin for Projecti
 - Version: 1
  
 # Usage
-- clone the repo
+- fork/clone the repo
 - adapt the sample manifest according to your needs (at least modify the unique id)
 - customize the Wallpaper provider service and Settings fragment
 
@@ -38,7 +38,7 @@ Each of these events will lead to a call to getWallpapers() depending on your up
 - Be responsible : even though getWallpapers() isn't called from the UI thread, it doesn't mean you can waste precious device resources (keep in mind that many Android Tv devices have less memory or cpu power than most smartphones).
 - If you're fetching wallpapers from an external source, consider using an http cache to prevent flooding it with requests.
 - Don't request an update mode you won't use. This is particularly true with card focused events. Those requests might be sent each second or so when a user navigates in the launcher.
-- Take advantage of the itemsCacheDurationMillis to limit requests to your plugin and leverage Projectivy's cache (the stock "Reddit" wallpaper provider uses a 12h cache, planning you will cycle through the same wallpapers for 12 hours before they are updated)
+- Take advantage of the itemsCacheDurationMillis to limit requests to your plugin and leverage Projectivy's cache (the stock "Reddit" wallpaper provider uses a 12h cache, meaning you will cycle through the same wallpapers for 12 hours before they are updated)
 - Don't send to many wallpapers to Projectivy: it will cache them and only use them for itemsCacheDurationMillis, so this will waste memory 
 - Respect authors : the wallpaper class allows you to define an author and source uri, fill them to give credit when possible
 
