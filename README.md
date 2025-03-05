@@ -6,7 +6,7 @@ This is a sample project for developing a wallpaper provider plugin for Projecti
 - Version: 1
  
 # Usage
-- fork/clone the repo
+- Select "use this template" (right to the fork and start buttons) to fork this as a template
 - adapt the sample manifest according to your needs (at least modify the unique id)
 - customize the Wallpaper provider service and Settings fragment
 
