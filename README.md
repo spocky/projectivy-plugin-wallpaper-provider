@@ -39,7 +39,7 @@ Each of these events will lead to a call to getWallpapers() depending on your up
 - If you're fetching wallpapers from an external source, consider using an http cache to prevent flooding it with requests.
 - Don't request an update mode you won't use. This is particularly true with card focused events. Those requests might be sent each second or so when a user navigates in the launcher.
 - Take advantage of the itemsCacheDurationMillis to limit requests to your plugin and leverage Projectivy's cache (the stock "Reddit" wallpaper provider uses a 12h cache, meaning you will cycle through the same wallpapers for 12 hours before they are updated)
-- Don't send to many wallpapers to Projectivy: it will cache them and only use them for itemsCacheDurationMillis, so this will waste memory 
+- Don't send too many wallpapers to Projectivy: it will cache them and only use them for itemsCacheDurationMillis, so this will waste memory 
 - Respect authors : the wallpaper class allows you to define an author and source uri, fill them to give credit when possible
 
 # Note
