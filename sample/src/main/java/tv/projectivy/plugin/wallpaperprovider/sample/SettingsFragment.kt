@@ -2,7 +2,6 @@ package tv.projectivy.plugin.wallpaperprovider.sample
 
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.leanback.app.GuidedStepSupportFragment
 import androidx.leanback.widget.GuidanceStylist.Guidance
@@ -13,7 +12,7 @@ class SettingsFragment : GuidedStepSupportFragment() {
     override fun onCreateGuidance(savedInstanceState: Bundle?): Guidance {
         return Guidance(
             getString(R.string.plugin_name),
-            getString(R.string.plugin_description),
+            "v${BuildConfig.VERSION_NAME}\n\n${getString(R.string.plugin_description)}",
             getString(R.string.settings),
             AppCompatResources.getDrawable(requireActivity(), R.drawable.ic_plugin)
         )
