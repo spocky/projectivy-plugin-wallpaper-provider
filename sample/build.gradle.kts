@@ -13,8 +13,8 @@ android {
         applicationId = "tv.projectivy.plugin.wallpaperprovider.sample"
         minSdk = 23
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.01"
+        versionCode = 2
+        versionName = "1.02"
 
     }
 
@@ -46,7 +46,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.17.0")
     implementation("androidx.leanback:leanback:1.2.0")
     implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.material:material:1.13.0")
     implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("com.google.code.gson:gson:2.13.1")
     implementation(project(":api"))
