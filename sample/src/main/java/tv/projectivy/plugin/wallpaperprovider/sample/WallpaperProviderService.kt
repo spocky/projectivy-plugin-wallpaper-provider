@@ -39,7 +39,9 @@ class WallpaperProviderService: Service() {
                         // LOTTIE can be served from app raw/, local storage or internet
                         Wallpaper(getDrawableUri(R.raw.gradient).toString(), WallpaperType.LOTTIE),
                         // VIDEO can be served from app raw/, local storage or internet (some formats might not be supported, though)
-                        Wallpaper(getDrawableUri(R.raw.light).toString(), WallpaperType.VIDEO)
+                        Wallpaper(getDrawableUri(R.raw.light).toString(), WallpaperType.VIDEO),
+                        // COLOR should be in the form #RRGGBB or #AARRGGBB (a few colors names are also supported)
+                        Wallpaper("#ffaa00", WallpaperType.COLOR)
                     )
                 }
 
