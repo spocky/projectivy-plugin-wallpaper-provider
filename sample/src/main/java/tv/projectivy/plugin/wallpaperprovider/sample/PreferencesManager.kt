@@ -2,11 +2,27 @@ package tv.projectivy.plugin.wallpaperprovider.sample
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.preference.PreferenceManager
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.ToNumberPolicy
-import com.google.gson.reflect.TypeToken
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.boolean
+import kotlinx.serialization.json.booleanOrNull
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.float
+import kotlinx.serialization.json.floatOrNull
+import kotlinx.serialization.json.int
+import kotlinx.serialization.json.intOrNull
+import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.long
+import kotlinx.serialization.json.longOrNull
+import kotlin.collections.all
+import kotlin.collections.component1
+import kotlin.collections.component2
+import kotlin.collections.forEach
+import kotlin.collections.mapTo
 
 object PreferencesManager {
     private const val IMAGE_URL_KEY = "image_url_key"
@@ -51,36 +67,68 @@ object PreferencesManager {
         set(value) { PreferencesManager[IMAGE_URL_KEY]=value }
 
     fun export(): String {
-        return Gson().toJson(preferences.all)
+        return convertSharedPreferencesToJson(preferences)
     }
 
     fun import(prefs: String): Boolean {
-        val gson = GsonBuilder()
-            .setObjectToNumberStrategy(ToNumberPolicy.LONG_OR_DOUBLE)
-            .create()
-
         try {
-            val type = object : TypeToken<Map<String, Any>>() {}.type
-            val map = gson.fromJson<Map<String, Any>>(prefs, type)
-            val editor = preferences.edit()
-            editor.clear()
-            map.forEach { (key: String, value: Any) ->
-                when(value) {
-                    is Boolean -> editor.putBoolean(key, value)
-                    is Double -> editor.putFloat(key, value.toFloat())
-                    is Float -> editor.putFloat(key, value)
-                    is Int -> editor.putInt(key, value)
-                    is Long -> editor.putInt(key, value.toInt())
-                    is String -> editor.putString(key, value)
-                    is ArrayList<*> -> editor.putStringSet(key, java.util.HashSet(value as java.util.ArrayList<String>))
-                    is Set<*> -> editor.putStringSet(key, value as Set<String>)
-                }
-            }
-            editor.apply()
-        } catch (ex: Exception) {
-            ex.printStackTrace()
+            importPreferencesFromJson(preferences, prefs)
+        } catch (e: Exception) {
+            Log.e("import", "Error importing preferences", e)
             return false
         }
         return true
+    }
+
+    private fun convertSharedPreferencesToJson(sharedPreferences: SharedPreferences): String {
+        val prefsJsonObject = buildJsonObject {
+            sharedPreferences.all.forEach { (key, value) ->
+                when (value) {
+                    is Int -> put(key, JsonPrimitive(value))
+                    is Long -> put(key, JsonPrimitive(value))
+                    is Float -> put(key, JsonPrimitive(value))
+                    is Boolean -> put(key, JsonPrimitive(value))
+                    is String -> put(key, JsonPrimitive(value))
+                    is Set<*> -> if (value.all { it is String }) {
+                        put(key, JsonArray(value.map { JsonPrimitive(it as String) }))
+                    } else {
+                        throw IllegalArgumentException("Unsupported set type")
+                    }
+                    else -> throw IllegalArgumentException("Unsupported preference type ${value?.javaClass} for key $key")
+                }
+            }
+        }
+        return prefsJsonObject.toString()
+    }
+
+    private fun importPreferencesFromJson(sharedPreferences: SharedPreferences, jsonString: String) {
+        val jsonElement = Json.parseToJsonElement(jsonString)
+
+        if (jsonElement is JsonObject) {
+            val editor = sharedPreferences.edit()
+            jsonElement.forEach { (key, value) ->
+                when (value) {
+                    is JsonPrimitive -> {
+                        when {
+                            value.isString -> editor.putString(key, value.content)
+                            value.booleanOrNull != null -> editor.putBoolean(key, value.boolean)
+                            value.intOrNull != null -> editor.putInt(key, value.int)
+                            value.floatOrNull != null -> editor.putFloat(key, value.float)
+                            value.longOrNull != null -> editor.putLong(key, value.long)
+                        }
+                    }
+
+                    is JsonArray if value.all { it is JsonPrimitive && it.isString } -> {
+                        val set = value.mapTo(mutableSetOf()) { it.jsonPrimitive.content }
+                        editor.putStringSet(key, set)
+                    }
+
+                    else -> throw IllegalArgumentException("Unsupported JSON element type for key $key")
+                }
+            }
+            editor.apply()
+        } else {
+            throw IllegalArgumentException("Expected JSON object for preferences import")
+        }
     }
 }

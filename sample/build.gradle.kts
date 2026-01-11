@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version "2.3.0"
 }
 
 android {
@@ -48,6 +49,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("com.google.android.material:material:1.13.0")
     implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("com.google.code.gson:gson:2.13.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0-RC")
     implementation(project(":api"))
 }
