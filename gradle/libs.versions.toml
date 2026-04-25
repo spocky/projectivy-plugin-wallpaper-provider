@@ -1,0 +1,53 @@
+[versions]
+# SDK
+appId = "tv.projectivy.plugin.wallpaperprovider.sample"
+compileSdk = "37"
+minSdk = "23"
+targetSdk = "37"
+versionCode = "3"
+versionName = "1.10"
+
+# Kotlin
+kotlin = "2.3.21"  # https://github.com/JetBrains/kotlin/releases
+
+# Android Gradle Plugin
+agp = "9.2.0"
+
+# Core AndroidX
+core = "1.19.0-alpha01" # https://developer.android.com/jetpack/androidx/releases/core
+appcompat = "1.8.0-alpha01" # https://developer.android.com/jetpack/androidx/releases/appcompat
+preference = "1.2.1" # https://developer.android.com/jetpack/androidx/releases/preference
+annotation = "1.10.0" # https://developer.android.com/jetpack/androidx/releases/annotation
+
+# Material
+material = "1.14.0-beta01" # https://github.com/material-components/material-components-android/releases
+
+# Kotlinx
+serializationJson = "1.11.0" # https://github.com/Kotlin/kotlinx.serialization/releases
+
+# Leanback
+leanback = "1.2.0" # https://developer.android.com/jetpack/androidx/releases/leanback
+
+[libraries]
+androidx-leanback = { module = "androidx.leanback:leanback", version.ref = "leanback" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preference" }
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
+
+# Kotlinx
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationJson" }
+
+# Core AndroidX
+androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+
+# Material
+google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+

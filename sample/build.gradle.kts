@@ -1,26 +1,40 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    kotlin("plugin.serialization") version "2.3.0"
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.serialization)
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
+    }
 }
 
 android {
-    namespace = "tv.projectivy.plugin.wallpaperprovider.sample"
-    compileSdk = 36
+    namespace = libs.versions.appId.get()
+    compileSdk = libs.versions.compileSdk.get().toInt()
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 
     defaultConfig {
-        applicationId = "tv.projectivy.plugin.wallpaperprovider.sample"
-        minSdk = 23
-        targetSdk = 36
-        versionCode = 2
-        versionName = "1.02"
+        applicationId = libs.versions.appId.get()
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
+    }
 
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
-        release {
+        getByName("release") {
+            isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -28,27 +42,14 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
-        }
-    }
-
-    buildFeatures {
-        buildConfig = true
-    }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.17.0")
-    implementation("androidx.leanback:leanback:1.2.0")
-    implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("com.google.android.material:material:1.13.0")
-    implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0-RC")
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.leanback)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.google.material)
+    implementation(libs.androidx.preference.ktx)
+    implementation(libs.kotlinx.serialization.json)
     implementation(project(":api"))
 }

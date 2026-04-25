@@ -33,6 +33,14 @@ object PreferencesManager {
         preferences = PreferenceManager.getDefaultSharedPreferences(context)
     }
 
+    private val json by lazy {
+        Json {
+            ignoreUnknownKeys = true
+            isLenient = true
+            allowTrailingComma = true
+        }
+    }
+
     private inline fun SharedPreferences.edit(operation: (SharedPreferences.Editor) -> Unit) {
         val editor = this.edit()
         operation(editor)
@@ -102,7 +110,7 @@ object PreferencesManager {
     }
 
     private fun importPreferencesFromJson(sharedPreferences: SharedPreferences, jsonString: String) {
-        val jsonElement = Json.parseToJsonElement(jsonString)
+        val jsonElement = json.parseToJsonElement(jsonString)
 
         if (jsonElement is JsonObject) {
             val editor = sharedPreferences.edit()

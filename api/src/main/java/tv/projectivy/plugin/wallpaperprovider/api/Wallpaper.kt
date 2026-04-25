@@ -7,6 +7,7 @@ import tv.projectivy.plugin.wallpaperprovider.api.WallpaperDisplayMode.Companion
 import tv.projectivy.plugin.wallpaperprovider.api.WallpaperDisplayMode.Companion.CROP
 import tv.projectivy.plugin.wallpaperprovider.api.WallpaperDisplayMode.Companion.DEFAULT
 import tv.projectivy.plugin.wallpaperprovider.api.WallpaperDisplayMode.Companion.FIT_CENTER
+import tv.projectivy.plugin.wallpaperprovider.api.WallpaperDisplayMode.Companion.FIT_CENTER_BLURRED_BG
 import tv.projectivy.plugin.wallpaperprovider.api.WallpaperDisplayMode.Companion.STRETCH
 import tv.projectivy.plugin.wallpaperprovider.api.WallpaperType.Companion.ANIMATED_DRAWABLE
 import tv.projectivy.plugin.wallpaperprovider.api.WallpaperType.Companion.COLOR
@@ -32,7 +33,7 @@ annotation class WallpaperType {
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.SOURCE)
-@IntDef(DEFAULT, CROP, STRETCH, BLUR, FIT_CENTER)
+@IntDef(DEFAULT, CROP, STRETCH, BLUR, FIT_CENTER, FIT_CENTER_BLURRED_BG)
 annotation class WallpaperDisplayMode {
     companion object {
         const val DEFAULT = 0
@@ -40,6 +41,7 @@ annotation class WallpaperDisplayMode {
         const val STRETCH = 2
         const val BLUR = 3
         const val FIT_CENTER = 4
+        const val FIT_CENTER_BLURRED_BG = 5
     }
 }
 
